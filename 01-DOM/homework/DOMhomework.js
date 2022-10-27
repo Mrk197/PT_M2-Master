@@ -54,20 +54,27 @@ ToDo.prototype.completeToDo = function () {
 
 function buildToDo(todo, index) {
   // Tu código acá:
-  var toDoShell = document.createElement('div');
+  const toDoShell = document.createElement('div');
   toDoShell.className ='toDoShell';
 
-  toDoText = document.createElement('span');
+  const toDoText = document.createElement('span');
   toDoText.innerHTML = todo.description;
-  toDoText.setAttribute('id', index);
+
+  const toDoCheck = document.createElement('input');
+  toDoCheck.setAttribute('type', 'checkbox');
+  toDoCheck.setAttribute('id', index);
+  toDoCheck.className = "completeCheckbox";
 
   if (todo.complete) {
     toDoText.className = 'completeText';
+    toDoCheck.setAttribute('checked', true)
   }
+  //todo.complete && (toDoText.className = 'completeText');
 
-  toDoText.addEventListener("click", completeToDo);
+  toDoCheck.addEventListener("click", completeToDo);
 
   toDoShell.appendChild(toDoText);
+  toDoShell.appendChild(toDoCheck);
 
   return toDoShell;
 }
@@ -98,7 +105,7 @@ function buildToDos(toDos) {
 
 function displayToDos() {
   // Tu código acá:
-  let toDoContainer = document.querySelector('#toDoContainer');
+  const toDoContainer = document.querySelector('#toDoContainer');
   toDoContainer.innerHTML = " ";
   let BuildToDos =  buildToDos(toDoItems);
 
