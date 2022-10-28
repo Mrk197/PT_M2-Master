@@ -6,8 +6,9 @@ var toDoItems = [];
 // Usando querySelector seleccionar dicho span por su id ('createdBy') y luego usando innerHTML
 // agregar tu nombre al final del texto actual. Ej: 'Aplicación creada por Franco'
 // Tu código acá:
+const nombre = " Mirka"
 let text = document.querySelector('#createdBy');
-text.innerHTML = text.innerHTML + " Mirka";
+text.innerHTML = text.innerHTML + nombre;
 
 
 // Crear una clase denominada 'ToDo' cuyo constructor debe recibir un único parámetro del tipo string
