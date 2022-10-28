@@ -60,6 +60,7 @@ function buildToDo(todo, index) {
   const toDoText = document.createElement('span');
   toDoText.innerHTML = todo.description;
 
+  //ejercicio extra
   const toDoCheck = document.createElement('input');
   toDoCheck.setAttribute('type', 'checkbox');
   toDoCheck.setAttribute('id', index);
