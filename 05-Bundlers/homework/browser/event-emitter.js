@@ -1,6 +1,4 @@
-(function () {
-
-  window.EventEmitter = EventEmitter;
+  module.exports = EventEmitter;
 
   // our EventEmitter constructor function
   function EventEmitter () {
@@ -42,5 +40,3 @@
     });
 
   };
-
-})();

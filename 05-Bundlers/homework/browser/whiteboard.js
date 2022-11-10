@@ -1,6 +1,7 @@
-(function () {
+  var EventEmitter = require('./event-emitter');
 
-  window.whiteboard = new window.EventEmitter();
+
+  whiteboard = new EventEmitter();
 
   // Ultimately, the color of our stroke;
   var color;
@@ -35,7 +36,7 @@
 
     // The device pixel ratio is the multiplier between CSS pixels
     // and device pixels
-    var pixelRatio = window.devicePixelRatio || 1;
+    var pixelRatio = devicePixelRatio || 1;
 
     // Allocate backing store large enough to give us a 1:1 device pixel
     // to canvas pixel ratio.
@@ -63,7 +64,7 @@
   }
 
   resize();
-  window.addEventListener('resize', resize);
+  addEventListener('resize', resize);
 
   var currentMousePosition = { x: 0, y: 0 };
   var lastMousePosition = { x: 0, y: 0 };
@@ -113,4 +114,4 @@
 
   };
 
-})();
+  module.exports = whiteboard;
