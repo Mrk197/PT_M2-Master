@@ -1,5 +1,7 @@
-  var whiteboard = require('./whiteboard.js');
-  var socket = require('socket.io-client');
+import whiteboard from './whiteboard.js';
+import {io} from 'socket.io-client';
+
+  const socket = io(window.location.origin);
 
   socket.on('connect', function () {
     console.log('Connected!');

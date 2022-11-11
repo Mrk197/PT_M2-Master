@@ -1,4 +1,4 @@
-  var EventEmitter = require('./event-emitter');
+  import EventEmitter from './event-emitter';
 
 
   whiteboard = new EventEmitter();
@@ -114,4 +114,4 @@
 
   };
 
-  module.exports = whiteboard;
+  export default whiteboard;

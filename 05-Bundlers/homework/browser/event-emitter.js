@@ -1,7 +1,5 @@
-  module.exports = EventEmitter;
-
   // our EventEmitter constructor function
-  function EventEmitter () {
+  export default function EventEmitter () {
     this.subscribers = {};
   }
 
