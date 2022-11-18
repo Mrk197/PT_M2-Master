@@ -1,0 +1,48 @@
+@font-face {
+    font-family: face;
+    src: url("");
+}
+
+.card{
+    background-color: azure;
+    border-radius: 5px;   
+    width: 20vw;
+}
+
+.divClose{
+    display: flex;
+    justify-content: end;
+    padding: 4px 10px 4px 10px;
+}
+
+.divClose button{
+    background-color: rgba(201, 36, 36, 0.954);
+    border-color: brown;
+    border-radius: 3px;
+}
+
+.divClose button:hover{
+    background-color: rgba(201, 36, 36, 0.702);
+}
+
+.divImg{
+    display: flex;
+    flex-direction: column;
+}
+
+.divImg img{
+    width: 20vw;
+}
+
+.divImg h2{
+    background-color: rgba(7, 7, 7, 0.714);
+    color: white;
+    margin-top: -15%;
+    padding-bottom: 0;
+    width: 10vw;
+}
+
+.divDescription{
+    display: flex;
+    justify-content: space-around;
+}

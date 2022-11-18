@@ -1,0 +1,26 @@
+.divSearch{
+    padding-top: 20px;
+    margin-top: 4%;
+    display: flex;
+    justify-content: center;
+}
+
+.divSearch input{
+    border-radius: 3px;
+    margin-right: 2%;
+    height: 30px;
+    width: 12%;
+    border: none;
+}
+
+.divSearch button{
+    background-color: rgb(20, 75, 20);
+    border-radius: 3px;
+    color: white;
+    border: none;
+    width: 5%;
+}
+
+.divSearch button:hover{
+    background-color: rgb(84, 120, 31);
+}

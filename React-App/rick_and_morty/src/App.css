@@ -1,0 +1,13 @@
+.App {
+   text-align: center;
+   background-image: url("./img/background1.png");
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+   height: 96vh;
+}
+
+.Tittle{
+   color: white; 
+   margin: 30px;
+}
