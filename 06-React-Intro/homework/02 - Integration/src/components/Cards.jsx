@@ -5,6 +5,7 @@ export default function Cards({characters}) {
       {
          characters.map((character) => 
             { return <Card 
+               key={character.name}
                name={character.name}
                species={character.species}
                gender={character.gender}
