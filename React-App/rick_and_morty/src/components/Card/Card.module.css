@@ -9,29 +9,30 @@
     width: 20vw;
 }
 
-.divClose{
-    display: flex;
-    justify-content: end;
-    padding: 4px 10px 4px 10px;
-}
-
-.divClose button{
+.divImg button{
     background-color: rgba(201, 36, 36, 0.954);
     border-color: brown;
     border-radius: 3px;
+    margin-bottom: -10%;
+    z-index: 2;
+    width: 8%;
+    align-self: flex-end;
+    margin-right: 4%;
 }
 
-.divClose button:hover{
+.divImg button:hover{
     background-color: rgba(201, 36, 36, 0.702);
 }
 
 .divImg{
     display: flex;
     flex-direction: column;
+    border-radius: 3px;
 }
 
 .divImg img{
     width: 20vw;
+    border-radius: 3px;
 }
 
 .divImg h2{

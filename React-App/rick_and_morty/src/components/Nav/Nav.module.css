@@ -1,0 +1,18 @@
+.divNav{
+    padding: 5px;
+    display: flex;
+    justify-content: end;
+    /* border: red solid 1px; */
+}
+
+.divNav button{
+    background-color: rgb(20, 75, 20);
+    border-radius: 3px;
+    color: white;
+    border: none;
+    margin-left: 20px;
+}
+
+.divNav button:hover{
+    background-color: rgb(84, 120, 31);
+}

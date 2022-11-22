@@ -1,15 +1,12 @@
 .divSearch{
-    padding-top: 20px;
-    margin-top: 4%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    width: 25%;
 }
 
 .divSearch input{
     border-radius: 3px;
-    margin-right: 2%;
     height: 30px;
-    width: 12%;
     border: none;
 }
 
@@ -18,7 +15,6 @@
     border-radius: 3px;
     color: white;
     border: none;
-    width: 5%;
 }
 
 .divSearch button:hover{
