@@ -6,10 +6,13 @@
 .card{
     background-color: azure;
     border-radius: 5px;   
-    width: 20vw;
+    width: 18vw;
+    margin-bottom: 5%;
+    display: flex;
+    flex-direction: column;
 }
 
-.divImg button{
+.card button{
     background-color: rgba(201, 36, 36, 0.954);
     border-color: brown;
     border-radius: 3px;
@@ -20,7 +23,7 @@
     margin-right: 4%;
 }
 
-.divImg button:hover{
+.card button:hover{
     background-color: rgba(201, 36, 36, 0.702);
 }
 
@@ -31,7 +34,7 @@
 }
 
 .divImg img{
-    width: 20vw;
+    width: 18vw;
     border-radius: 3px;
 }
 

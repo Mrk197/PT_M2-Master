@@ -6,12 +6,13 @@ export default function Cards({characters, close}) {
       {
          characters.map((character) => 
             { return <Card 
-               key={character.id}
+               detailId={character.id}
                name={character.name}
                species={character.species}
                gender={character.gender}
                image={character.image}
                onClose={() => close(character.id)}
+               key={character.id}
             />}
          )
       }
