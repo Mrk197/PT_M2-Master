@@ -1,14 +1,22 @@
 import React from "react";
 import SearchBar from "../SearchBar/SearchBar";
 import styles from "./Nav.module.css"
-import {Link} from "react-router-dom"
+import {NavLink} from "react-router-dom"
 
-export default function Nav({agregar, randomCharacter}) {
+export default function Nav({agregar, randomCharacter,logout}) {
     return <div className={styles.divNav}>
-        <Link to="/about"><span>About</span></Link>
+        <div className={styles.navLeft}>
+          
+            <NavLink to="/" className={({ isActive }) => (isActive ? styles.active : styles.inactive)}><span>Home</span></NavLink>
+            <NavLink to="/about" className={({ isActive }) => (isActive ? styles.active : styles.inactive)}><span>About</span></NavLink>
+            <NavLink to="/logout" className={({ isActive }) => (isActive ? styles.active : styles.inactive)} onClick={logout}><span>Logout</span></NavLink>
+          
+        </div>
+        <div className={styles.navRigth}>
         <SearchBar
           onSearch={agregar}
         />
-        <button onClick={randomCharacter}>Random</button>
+        <button onClick={randomCharacter} className={styles.btnRandom}>Random</button>
+        </div>
     </div>
 }

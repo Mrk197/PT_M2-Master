@@ -28,21 +28,14 @@ function App () {
     }
   }
 
+  function logout() {
+    setAccess(false);
+  }
+
   useEffect(() => {
     !access && navigate('/login');
   }, [access]);
 
-  /* const RequireAuth = ({children}) => {
-    const location = useLocation();
-    if (!logged) {
-    
-    return <Navigate to="/login" state={{ from: location}}/>
-    
-    }
-    
-    return children
-    
-    }; */
 
   const onSearch = (character)=>{
     console.log("se ha presionado agregar", character);
@@ -79,7 +72,7 @@ function App () {
   return (
     <div className='App' style={{ padding: '25px' }}>
       {console.log(location)}
-      {location.pathname !== "/login" && <Nav agregar={onSearch} randomCharacter={randomCharacter} />} 
+      {location.pathname !== "/login" && <Nav agregar={onSearch} randomCharacter={randomCharacter} logout={logout} />} 
       <hr style={{color: "#5f03ff"}}></hr>
       <Routes>
         <Route path='/login' element={<Form login={login}/>} />

@@ -1,6 +1,6 @@
 
 export function validation({username, password}) {
-    const regexEmail = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i; //Estandar RFC 5322
+    const regexEmail = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
     const regexPwd = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{6,10}$/;
     let errors = {};
     if (username === '') {
@@ -12,7 +12,7 @@ export function validation({username, password}) {
     else if(username.length >= 35){
         errors.username = "Longitud no válida"
     }
-    if (password === '') {
+    else if (password === '') {
         errors.password = "Ingrese contraseña"
     } 
     else if (!regexPwd.test(password)){
