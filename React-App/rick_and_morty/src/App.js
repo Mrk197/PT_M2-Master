@@ -6,23 +6,33 @@ import Detail from './components/Detail/Detail'
 import Error from './components/Error/Error'
 import Form from './components/Form/Form'
 //import characters from './data.js'
-import React, {useState} from 'react'
-import {Routes, Route, useLocation, Navigate} from 'react-router-dom'
+import React, {useState, useEffect} from 'react'
+import {Routes, Route, useLocation, useNavigate} from 'react-router-dom'
 
 function App () {
   const [characters, setCharacters] = useState([]);
   const location = useLocation();
+  const navigate = useNavigate();
 
   //LOGIN
-  const [logged, setLogged] = useState(false);
-  const handleLogin = () => {  
-    setLogged(true);
-  };
-  const handleLogout = () => {
-    setLogged(false);
+  const [access, setAccess] = useState(false);
+  const username = 'ejemplo@gmail.com';
+  const password = '1Password';
+
+  function login(userData) {
+    console.log("login");
+    console.log(userData.password, userData.username);
+    if (userData.password === password && userData.username === username) {
+       setAccess(true);
+       navigate('/');
+    }
   }
 
-  const RequireAuth = ({children}) => {
+  useEffect(() => {
+    !access && navigate('/login');
+  }, [access]);
+
+  /* const RequireAuth = ({children}) => {
     const location = useLocation();
     if (!logged) {
     
@@ -32,7 +42,7 @@ function App () {
     
     return children
     
-    };
+    }; */
 
   const onSearch = (character)=>{
     console.log("se ha presionado agregar", character);
@@ -70,10 +80,10 @@ function App () {
     <div className='App' style={{ padding: '25px' }}>
       {console.log(location)}
       {location.pathname !== "/login" && <Nav agregar={onSearch} randomCharacter={randomCharacter} />} 
-      <hr></hr>
+      <hr style={{color: "#5f03ff"}}></hr>
       <Routes>
-        <Route path='/login' element={<Form state={handleLogin}/>} />
-        <Route path="/" element={<RequireAuth><Home characters={characters} close={onClose}/></RequireAuth>} />
+        <Route path='/login' element={<Form login={login}/>} />
+        <Route path="/" element={<Home characters={characters} close={onClose}/>} />
         <Route path="/about" element={<About/>} />
         <Route path="/detail/:detailId" element={<Detail/>} />
         <Route path="*" element={<Error />} />
