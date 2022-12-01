@@ -11,10 +11,10 @@ const initialState = {
 function contador(state = initialState, action) {
   switch (action.type) {
     case INCREMENTO:
-      return state++;
+      return {contador: state.contador+1}; //no funciona con ++
 
     case DECREMENTO:
-      return state--;
+      return {contador: state.contador-1}; //no funciona con --
   
     default:
       return state;
