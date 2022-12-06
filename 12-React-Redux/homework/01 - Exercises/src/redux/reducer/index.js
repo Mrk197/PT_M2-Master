@@ -1,15 +1,25 @@
-import {ADD_PRODUCT,DELETE_PRODUCT} from './types';
+import {ADD_PRODUCT,DELETE_PRODUCT, GET_STORE_NAME} from '../actions/types';
 
 const initialState = {
    list: []
 }
 
-function rootReducer(state = initialState, action) {
-    switch (action.type) {
+function rootReducer(state = initialState, {type, payload}) {
+    switch (type) {
         case ADD_PRODUCT:
-            return {list: [...state.list, action.payload]}
+            return {
+                ...state,
+                list: [...state.list, payload]}
         case DELETE_PRODUCT:
-            state.list.filter();    
+            const newList = state.list.filter((element)=> element.id !== payload); 
+            return {
+                ...state,
+                list : newList}
+        case GET_STORE_NAME:
+            return {
+                ...state,
+                storeName: payload
+            }
         default:
             return state
     }
