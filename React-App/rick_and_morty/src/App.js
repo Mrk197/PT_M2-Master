@@ -73,7 +73,7 @@ function App () {
     <div className='App' style={{ padding: '25px' }}>
       {console.log(location)}
       {location.pathname !== "/login" && <Nav agregar={onSearch} randomCharacter={randomCharacter} logout={logout} />} 
-      <hr style={{color: "#5f03ff"}}></hr>
+
       <Routes>
         <Route path='/login' element={<Form login={login}/>} />
         <Route path="/" element={<Home characters={characters} close={onClose}/>} />
