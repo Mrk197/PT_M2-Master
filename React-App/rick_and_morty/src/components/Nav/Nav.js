@@ -9,6 +9,7 @@ export default function Nav({agregar, randomCharacter,logout}) {
           
             <NavLink to="/" className={({ isActive }) => (isActive ? styles.active : styles.inactive)}><span>Home</span></NavLink>
             <NavLink to="/about" className={({ isActive }) => (isActive ? styles.active : styles.inactive)}><span>About</span></NavLink>
+            <NavLink to="/favorites" className={({ isActive }) => (isActive ? styles.active : styles.inactive)}><span>Favorites</span></NavLink>
             <NavLink to="/logout" className={({ isActive }) => (isActive ? styles.active : styles.inactive)} onClick={logout}><span>Logout</span></NavLink>
           
         </div>

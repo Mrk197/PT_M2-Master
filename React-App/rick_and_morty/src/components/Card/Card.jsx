@@ -4,27 +4,31 @@ import {useState, useEffect} from 'react';
 import { connect } from "react-redux";
 import { addFavorite, deleteFavorite } from '../../redux/actions/actions';
 
-export default function Card({name, species, gender, image, onClose, detailId, addFavorite, deleteFavorite, myFavorites}) {
+export function Card({name, species, gender, image, onClose, detailId, addFavorite, deleteFavorite, myFavorites}) {
    const [isfav, setIsFav] = useState(false);
 
-   /* useEffect(() => {
-      myFavorites.forEach((fav) => {
-         if (fav.id === detailId) {
-            setIsFav(true);
-         }
-      });
-   }, [myFavorites]); */
 
    function handleFavorite() {
       if (isfav) {
          setIsFav(false);
+         console.log('isFAV', isfav);
          deleteFavorite(detailId);
       }
       else{
          setIsFav(true);
-         addFavorite({name, species, gender, image});
+         //console.log('isFAV', isfav);
+         addFavorite({name, species, gender, image, detailId});
       }
    }
+
+   /* useEffect(() => {
+      myFavorites.forEach((fav) => {
+         console.log("id", fav);
+         if (fav.detailId === detailId) {
+            setIsFav(true);
+         }
+      });
+   }, [myFavorites]);  */
 
    return (
       <div className={styles.card}>
@@ -69,4 +73,4 @@ export function mapDispatchToProps(dispatch) {
    }
 }
 
-//export default connect(mapStateToProps, mapDispatchToProps)(Card);
+export default connect(mapStateToProps, mapDispatchToProps)(Card);

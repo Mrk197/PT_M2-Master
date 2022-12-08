@@ -5,7 +5,7 @@ import About from './components/About/About'
 import Detail from './components/Detail/Detail'
 import Error from './components/Error/Error'
 import Form from './components/Form/Form'
-//import characters from './data.js'
+import Favorites from './components/Favorites/Favorites'
 import React, {useState, useEffect} from 'react'
 import {Routes, Route, useLocation, useNavigate} from 'react-router-dom'
 
@@ -79,6 +79,7 @@ function App () {
         <Route path="/" element={<Home characters={characters} close={onClose}/>} />
         <Route path="/about" element={<About/>} />
         <Route path="/detail/:detailId" element={<Detail/>} />
+        <Route path="/favorites" element={<Favorites close={onClose}/>} />
         <Route path="*" element={<Error />} />
       </Routes>
     </div>
