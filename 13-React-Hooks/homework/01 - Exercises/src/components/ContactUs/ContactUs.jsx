@@ -33,10 +33,10 @@ const ContactUs = () => {
 
   return (
     <div className="contactBg">
-      <input name="nombre" onChange={handleInput}></input>
-      <input name="email" onChange={handleInput}></input>
-      <input name="asunto" onChange={handleInput}></input>
-      <input name="mensaje" onChange={handleInput}></input>
+      <input name="nombre" onChange={handleInput} value={form.nombre}></input>
+      <input name="email" onChange={handleInput} value={form.email}></input>
+      <input name="asunto" onChange={handleInput} value={form.asunto}></input>
+      <input name="mensaje" onChange={handleInput} value={form.mensaje}></input>
       <button onClick={handleSubmit}>ENVIAR</button>
     </div>
   );
