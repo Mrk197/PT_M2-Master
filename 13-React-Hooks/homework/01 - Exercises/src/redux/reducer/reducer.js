@@ -1,5 +1,10 @@
 const initialState = {
-  formulario: {},
+  formulario: {
+    mensaje: "",
+    asunto: "",
+    nombre: "",
+    email: "",
+  },
 };
 
 const rootReducer = (state = initialState, { type, payload }) => {
