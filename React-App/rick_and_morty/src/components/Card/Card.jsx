@@ -4,7 +4,7 @@ import {useState, useEffect} from 'react';
 import { connect } from "react-redux";
 import { addFavorite, deleteFavorite } from '../../redux/actions/actions';
 
-export function Card({name, species, gender, image, onClose, detailId, addFavorite, deleteFavorite, myFavorites}) {
+function Card(props) {
    const [isfav, setIsFav] = useState(false);
 
 
@@ -12,23 +12,23 @@ export function Card({name, species, gender, image, onClose, detailId, addFavori
       if (isfav) {
          setIsFav(false);
          console.log('isFAV', isfav);
-         deleteFavorite(detailId);
+         props.deleteFavorite(props.detailId);
       }
       else{
          setIsFav(true);
-         //console.log('isFAV', isfav);
-         addFavorite({name, species, gender, image, detailId});
+         console.log('isFAV', isfav);
+         props.addFavorite(props);
       }
    }
 
-   /* useEffect(() => {
-      myFavorites.forEach((fav) => {
-         console.log("id", fav);
-         if (fav.detailId === detailId) {
+   useEffect(() => {
+      console.log("favorites", props.myFavorites);
+      props.myFavorites.forEach((fav) => {
+         if (fav.detailId === props.detailId) {
             setIsFav(true);
          }
       });
-   }, [myFavorites]);  */
+   }, [props.myFavorites]); 
 
    return (
       <div className={styles.card}>
@@ -40,17 +40,17 @@ export function Card({name, species, gender, image, onClose, detailId, addFavori
                <button onClick={handleFavorite}>🤍</button>
             )
          }
-         <button onClick={onClose}>X</button>
+         <button onClick={props.onClose}>X</button>
          </div>
-         <Link to={`/detail/${detailId}`}>
+         <Link to={`/detail/${props.detailId}`}>
          <div className={styles.divImg}>          
-            <img  src={image} alt="img" />
-            <h2>{name}</h2>
+            <img  src={props.image} alt="img" />
+            <h2>{props.name}</h2>
          </div>
          </Link>
          <div className={styles.divDescription}>
-            <h3>Species: {species}</h3>
-            <h3>Gender: {gender}</h3>
+            <h3>Species: {props.species}</h3>
+            <h3>Gender: {props.gender}</h3>
          </div>
       </div>
    );

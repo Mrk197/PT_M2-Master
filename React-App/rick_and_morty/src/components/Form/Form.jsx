@@ -17,11 +17,12 @@ export default function Form({login}) {
         login(userData);
     };
     return <div className={styles.login}>
+        <h1>RICK AND MORTY APP</h1>
         <form action="" className={styles.form} onSubmit={handleSubmit}>
             <div>
                 <label htmlFor="username">Username: </label>
                 <input
-                type="text"
+                type="email"
                 name="username"
                 value={userData.username}
                 onChange={handleInputChange}
@@ -34,7 +35,7 @@ export default function Form({login}) {
                 {errors.password && <p className={styles.warning}>{errors.password}</p>}
             </div>
             <div>
-                <input type="submit" value="LOGIN" />
+                <input type="submit" value="LOGIN" className={styles.button} />
             </div>
 
         </form>

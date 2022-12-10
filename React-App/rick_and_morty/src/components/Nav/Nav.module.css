@@ -29,11 +29,11 @@
 }
 .divNav a:hover{
     color: rebeccapurple;
-    border-bottom: 1px solid yellow;
+    border-bottom: 1px solid rgb(120, 182, 27);
 }
 
 .active{
-    color: yellow;
+    color: rgb(120, 182, 27);
 }
 
 .inactive{

@@ -12,6 +12,10 @@
     flex-direction: column;
 }
 
+.card a{
+    text-decoration: none;
+}
+
 .card button{
     background-color: rgba(201, 36, 36, 0.954);
     border-color: brown;

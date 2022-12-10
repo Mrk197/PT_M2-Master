@@ -1,9 +1,24 @@
 import Card from '../Card/Card.jsx';
-import { connect } from "react-redux";
+import { connect, useDispatch } from "react-redux";
+import { orderCards, filterCards } from '../../redux/actions/actions.js';
 
 export function Favorites({favorites, close}) {
+    const gender = ['Male', 'Female', 'unknown', 'Genderless'];
+    const dispatch = useDispatch();
     return <div>
         <h1>FAVORITES</h1>
+        <div>
+            <select name='order' onChange={(e)=>dispatch(orderCards(e.target.value))}>
+                <option value="ascendente">Ascendente</option>
+                <option value="descendente">Descendente</option>
+            </select>
+            <select name='filter' onChange={(e) => dispatch(filterCards(e.target.value))}>
+                {gender.map((item)=>{
+                    return <option value={item}>{item}</option>
+                })}
+                
+            </select>
+        </div>
         {
             favorites.map((favorite) =>{
                 return <Card 

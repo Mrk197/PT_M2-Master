@@ -3,6 +3,7 @@ export function validation({username, password}) {
     const regexEmail = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
     const regexPwd = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{6,10}$/;
     let errors = {};
+    console.log(username);
     if (username === '') {
         errors.username = "Debe ingresar un usuario";
     }
