@@ -25,7 +25,7 @@ function rootReducer(state=initialState, {type, payload}){
             const filter = state.allCharacters.filter( fav=> fav.gender === payload);
             return{
                 ...state,
-                myFavorites: payload == "all" ? state.allCharacters : filter
+                myFavorites: payload === "all" ? state.allCharacters : filter
             }
         case ORDER:
             const order= state.allCharacters.sort((a,b) => a.detailId - b.detailId );

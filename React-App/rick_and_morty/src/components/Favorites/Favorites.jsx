@@ -1,11 +1,12 @@
 import Card from '../Card/Card.jsx';
 import { connect, useDispatch } from "react-redux";
 import { orderCards, filterCards } from '../../redux/actions/actions.js';
+import './Favorites.css'
 
 export function Favorites({favorites, close}) {
     const gender = ['Male', 'Female', 'unknown', 'Genderless', 'all'];
     const dispatch = useDispatch();
-    return <div>
+    return <div className='divFavorites'>
         <h1>FAVORITES</h1>
         <div>
             <select name='order' onChange={(e)=>dispatch(orderCards(e.target.value))}>
@@ -19,19 +20,21 @@ export function Favorites({favorites, close}) {
                 
             </select>
         </div>
-        {
-            favorites.map((favorite) =>{
-                return <Card 
-                    detailId={favorite.id}
-                    name={favorite.name}
-                    species={favorite.species}
-                    gender={favorite.gender}
-                    image={favorite.image}
-                    onClose={() => close(favorite.id)}
-                    key={favorite.id}
-                />
-            })
-        }
+        <div className='divCard'>
+            {
+                favorites.map((favorite) =>{
+                    return <Card 
+                        detailId={favorite.id}
+                        name={favorite.name}
+                        species={favorite.species}
+                        gender={favorite.gender}
+                        image={favorite.image}
+                        onClose={() => close(favorite.id)}
+                        key={favorite.id}
+                    />
+                })
+            }
+        </div>
     </div>
 }
 
