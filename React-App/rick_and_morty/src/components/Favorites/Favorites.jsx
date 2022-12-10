@@ -3,7 +3,7 @@ import { connect, useDispatch } from "react-redux";
 import { orderCards, filterCards } from '../../redux/actions/actions.js';
 
 export function Favorites({favorites, close}) {
-    const gender = ['Male', 'Female', 'unknown', 'Genderless'];
+    const gender = ['Male', 'Female', 'unknown', 'Genderless', 'all'];
     const dispatch = useDispatch();
     return <div>
         <h1>FAVORITES</h1>
